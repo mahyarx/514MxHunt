@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/mahyarx/514mxhunt/raw/master/docs/hero.png" alt="HuntKit" style="width:100%" />
+  <img src="blob:https://github.com/ba875c3c-1224-47ce-aaac-9aaa1dd92ebc" alt="514MxHunt" style="width:100%" />
   <p></p>
   <sup>
     <a href="https://hub.docker.com/r/mahyarx/514mxhunt">
