@@ -48,12 +48,12 @@ docker run -it mahyarx/514mxhunt
   # Line 2: maps ~/Loot to the Docker's /root/loot
   # Line 3: Allows OpenVPN usage
   # Line 4: Opens and maps port 4444 (for listeners such as Metasploit)
-  # Line 5: Sets the machine's hostname to huntkit
+  # Line 5: Sets the machine's hostname to 514MxHunt
   docker run -it \
     -v ~/Loot:/root/loot \
     --cap-add=NET_ADMIN --device=/dev/net/tun \
     -p 4444:4444 \
-    -h huntkit \
+    -h 514MxHunt \
     mahyarx/514mxhunt
   ```
 </details>
