@@ -81,14 +81,14 @@ RUN apt-get update && \
   # OpenVPN
   openvpn \
   easy-rsa \
-  # wpscan
+  # wpscan \
   libcurl4-openssl-dev \
   libxml2 \
   libxml2-dev \
   libxslt1-dev \
   ruby-dev \
   zlib1g-dev \
-  # zsh
+  # zsh \
   fonts-powerline \
   powerline && \
   apt-get clean && \
@@ -221,12 +221,14 @@ RUN git clone --depth 1 https://github.com/robertdavidgraham/masscan.git $TOOLS/
 RUN go install -v github.com/tomnomnom/meg@latest
 
 # metasploit
-RUN apt update && \
-   apt install curl ca-certificates apt-transport-https software-properties-common lsb-release postgresql -y && \
-   curl -fsSL https://apt.metasploit.com/metasploit-framework.gpg.key | sudo gpg --dearmor | tee /usr/share/keyrings/metasploit.gpg > /dev/null && \
+#RUN apt update && \
+#   apt install curl ca-certificates apt-transport-https software-properties-common lsb-release postgresql -y && \
+RUN  curl -fsSL https://apt.metasploit.com/metasploit-framework.gpg.key | sudo gpg --dearmor | tee /usr/share/keyrings/metasploit.gpg > /dev/null && \
    echo "deb [ trusted=yes ] http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid main" | tee /etc/apt/sources.list.d/metasploit.list && \
    apt -o "Acquire::https::Verify-Peer=false" update
-RUN apt -o "Acquire::https::Verify-Peer=false" install metasploit-framework -y
+RUN apt -o "Acquire::https::Verify-Peer=false" install metasploit-framework -y && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
 #install
 #RUN mkdir $TOOLS/metasploit && \
 #  cd $TOOLS/metasploit && \
